@@ -224,16 +224,29 @@ highest_points = 0
 
 game_hash.each do |place,team|
   team.each do |attributes, data|
-    if attributes == :points
-     data.each do |player_hash|
-       if player_hash[:points] > highest_scorer
-       highest_scorer = player_hash[:points]
-       highest_points = player_hash[:player_name]
-        end   
+   if attributes == :players
+  data.each do |player_hash|
+     if player_hash[:points] > highest_scorer
+     highest_scorer = player_hash[:points]
+     highest_points = player_hash[:player_name]
+        end
       end
-    end
+     end
   end
-  end
+end
 return highest_points
 end
 
+def winning_team
+  nets_points = 0 
+  hornets_points = 0
+  
+  game_hash.each do |place,team|
+    team.each do |attributes, data|
+     if attributes == :players 
+    data.each do |player_hash|
+    end
+    end
+  end
+end
+end

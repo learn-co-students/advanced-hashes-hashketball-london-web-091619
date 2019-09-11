@@ -201,7 +201,7 @@ end
 
 def big_shoe_rebounds
 biggest_shoe_size = 0
-highest_rebound_number = 0
+rebound_number = 0
 
 game_hash.each do |place, team|
 team.each do |attributes, data|
@@ -209,29 +209,31 @@ if attributes == :players
 data.each do |player_hash|  
  if player_hash[:shoe] > biggest_shoe_size 
    biggest_shoe_size = player_hash[:shoe]
-    highest_rebound_number = player_hash[:rebounds]
+    rebound_number = player_hash[:rebounds]
           end
         end
       end
     end
   end
-  return highest_rebound_number
+  return rebound_number
 end
 
 def most_points_scored
 highest_scorer = 0 
+highest_points = 0
 
 game_hash.each do |place,team|
   team.each do |attributes, data|
     if attributes == :points
      data.each do |player_hash|
        if player_hash[:points] > highest_scorer
-       highest_scorer = player_hash[:player_name]
+       highest_scorer = player_hash[:points]
+       highest_points = player_hash[:player_name]
         end   
       end
     end
   end
   end
-return highest_scorer
+return highest_points
 end
 

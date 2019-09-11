@@ -236,17 +236,3 @@ game_hash.each do |place,team|
 end
 return highest_points
 end
-
-def winning_team
-  nets_points = 0 
-  hornets_points = 0
-  
-  game_hash.each do |place,team|
-    team.each do |attributes, data|
-     if attributes == :players 
-    data.each do |player_hash|
-    end
-    end
-  end
-end
-end
